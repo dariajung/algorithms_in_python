@@ -12,7 +12,7 @@ import math
 def is_prime(num):
     prime = True
     sq_root = math.ceil(num**(1.0/2))
-    number = 2
+    number = 3
 
     if (num == 2):
         return prime
@@ -22,7 +22,7 @@ def is_prime(num):
             if num % number == 0:
                 prime = False
                 break
-            number += 1
+            number += 2
 
     return prime
 

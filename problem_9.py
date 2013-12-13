@@ -6,9 +6,9 @@
 
 def pythagorean():
 
-    for c in xrange(5, 1001):
-        for b in xrange(4, c):
-            for a in xrange(3, b):
+    for c in range(5, 1001):
+        for b in range(4, c):
+            for a in range(3, b):
                 if a**2 + b**2 == c**2:
                     print a, b, c, a+b+c
                     if a + b + c == 1000:
