@@ -4,12 +4,7 @@
 # There exists exactly one Pythagorean triplet for which a + b + c = 1000.
 # find the product abc
 
-from problem_5 import euclid
-
 def pythagorean():
-    a = 0
-    b = 0
-    c = 0
 
     for c in xrange(5, 1001):
         for b in xrange(4, c):
