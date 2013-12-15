@@ -40,7 +40,6 @@ def calculate_max(grid):
 
     # horizontally moving
     for i in range(len(grid)):
-        #print grid.index(row)
         j = 0
         while j <= len(grid[0]) - 4:
             prod = grid[i][j] * grid[i][j + 1] * grid[i][j + 2] * grid[i][j + 3]
@@ -52,9 +51,7 @@ def calculate_max(grid):
     for j in range(len(grid[0])):
         i = 0
         while i <= len(grid) - 4:
-            #print "j: ", j, "i: ", i
             prod = grid[i][j] * grid[i + 1][j] * grid[i + 2][j] * grid[i + 3][j]
-            #print prod
             max_num.append(prod)
             i += 1
         i = 0
@@ -63,9 +60,7 @@ def calculate_max(grid):
     for i in range(len(grid)):
         j = 0
         while i <= len(grid) - 4 and j <= len(grid) - 4:
-            #print "j: ", j, "i: ", i
             prod = grid[i][j] * grid[i + 1][j + 1] * grid[i + 2][j + 2] * grid[i + 3][j + 3]
-            #print prod
             max_num.append(prod)
             j += 1
         j = 0  
@@ -73,9 +68,7 @@ def calculate_max(grid):
     for j in range(len(grid)):
         i = 0
         while i <= len(grid) - 4 and j <= len(grid) - 4:
-            #print "j: ", j, "i: ", i
             prod = grid[i][j] * grid[i + 1][j - 1] * grid[i + 2][j - 2] * grid[i + 3][j - 3]
-            #print prod
             if prod not in max_num:
                 max_num.append(prod)
             i += 1
