@@ -7,14 +7,10 @@ def sieve(a):
     bool_map = [True]*len(range(2, a + 1))
     primes = []
 
-    # Create a dictionary
-    # where all key initially 
-    # have value of True 
     for num in range(2, a+1):
         num_map.append(num) 
 
     for num in num_map:
-        #print num_map[num]
         index = num_map.index(num)
         for i in range(index + num, len(num_map), num):
             bool_map[i] = False
@@ -26,4 +22,4 @@ def sieve(a):
     return primes
 
 if __name__ == '__main__':
-    print sieve(10000)
+    print sieve(100000)
