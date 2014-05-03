@@ -1,8 +1,5 @@
 # Which starting number, under one million, produces the longest Collatz chain?
 
-# When I first wrote this, I didn't quite understand memoization and the concept of Python decorators.
-# I would like to refactor the Collatz function into a memoization decorator. 
-
 memoized = {}
 
 def Collatz(n):
