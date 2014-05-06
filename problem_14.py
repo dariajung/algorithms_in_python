@@ -1,31 +1,35 @@
 # Which starting number, under one million, produces the longest Collatz chain?
 
-memoized = {}
+class Collatz:
+    def __init__(self):
+        self.memoized = {}
 
-def Collatz(n):
-    global memoized
-    if n in memoized:
-        return memoized[n]
-    else:
-        start = n
-        chain = 1
-        while n != 1:
-            if n in memoized:
-                memoized[start] = memoized[n] + chain
-                return memoized[n] + chain
-            if n % 2 == 0:
-                n /= 2
-            else:
-                n = 3*n + 1
-            chain += 1
-        memoized[start] = chain
-        return chain
+    def calculate_chain(self, n):
+        if n in self.memoized:
+            return self.memoized[n]
+        else:
+            start = n
+            chain = 1
+            while n != 1:
+                if n in self.memoized:
+                    self.memoized[start] = self.memoized[n] + chain
+                    return self.memoized[n] + chain
+                if n % 2 == 0:
+                    n /= 2
+                else:
+                    n = 3*n + 1
+                chain += 1
+            self.memoized[start] = chain
+            return chain
 
-def longest_chain():
+# start to end is the range of 
+# number of chains you want to calculate for
+def longest_chain(start, end):
     number = 0
     chain_len = 0
-    for i in range(1, 1000001):
-        chain = Collatz(i)
+    collatz = Collatz()
+    for i in range(start, end + 1):
+        chain = collatz.calculate_chain(i)
         if chain > chain_len:
             chain_len = chain
             number = i
@@ -33,4 +37,4 @@ def longest_chain():
     return number, chain_len
 
 if __name__ == "__main__":
-    print longest_chain()
+    print longest_chain(1, 1000001)
